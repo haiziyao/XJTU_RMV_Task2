@@ -1,0 +1,10 @@
+# .clangd 配置文件（兼容 clangd 18+，支持 OpenCV 提示）
+CompileFlags:
+  # 配置头文件路径：OpenCV 路径 + 标准库路径
+  Add: 
+    - -I/usr/local/include/opencv4  # 你的 OpenCV 头文件路径（必须和 CMake 一致）
+    - -DCV_VERSION_MAJOR=4         # 告诉 clangd 是 OpenCV 4 版本
+    - -DOPENCV_4=1
+    - -I/usr/include/c++/11        # 标准库路径（避免 std 命名空间警告）
+    - -I/usr/include/x86_64-linux-gnu/c++/11  # 系统架构相关标准库路径
+

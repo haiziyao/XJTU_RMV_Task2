@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/hzy/RMV/opencv_project/build",
+  "command": "/usr/bin/c++  -isystem /usr/local/include/opencv4  -Wall -Wall -Wextra -o CMakeFiles/app.dir/src/main.cpp.o -c /home/hzy/RMV/opencv_project/src/main.cpp",
+  "file": "/home/hzy/RMV/opencv_project/src/main.cpp"
+}
+]

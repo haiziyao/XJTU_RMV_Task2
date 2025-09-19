@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.10.0)
+project(opencv_project VERSION 0.1.0 LANGUAGES C CXX)
+
+set(SRC_List src/main.cpp)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_HOME_DIRECTORY}/bin)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")
+find_package(OpenCV REQUIRED)
+
+# 调试信息，确认 OpenCV 路径
+message(STATUS "OpenCV_INCLUDE_DIRS = ${OpenCV_INCLUDE_DIRS}")
+message(STATUS "OpenCV_LIBS = ${OpenCV_LIBS}")
+
+add_executable(app ${SRC_List})
+
+
+target_include_directories(app PRIVATE ${OpenCV_INCLUDE_DIRS})
+
+target_compile_options(app PRIVATE -Wall -Wextra)
+target_link_libraries(app ${OpenCV_LIBS})
