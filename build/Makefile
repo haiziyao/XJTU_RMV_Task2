@@ -129,6 +129,78 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+src/HSVfind.o: src/HSVfind.cpp.o
+.PHONY : src/HSVfind.o
+
+# target to build an object file
+src/HSVfind.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/HSVfind.cpp.o
+.PHONY : src/HSVfind.cpp.o
+
+src/HSVfind.i: src/HSVfind.cpp.i
+.PHONY : src/HSVfind.i
+
+# target to preprocess a source file
+src/HSVfind.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/HSVfind.cpp.i
+.PHONY : src/HSVfind.cpp.i
+
+src/HSVfind.s: src/HSVfind.cpp.s
+.PHONY : src/HSVfind.s
+
+# target to generate assembly for a file
+src/HSVfind.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/HSVfind.cpp.s
+.PHONY : src/HSVfind.cpp.s
+
+src/findhsv.o: src/findhsv.cpp.o
+.PHONY : src/findhsv.o
+
+# target to build an object file
+src/findhsv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/findhsv.cpp.o
+.PHONY : src/findhsv.cpp.o
+
+src/findhsv.i: src/findhsv.cpp.i
+.PHONY : src/findhsv.i
+
+# target to preprocess a source file
+src/findhsv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/findhsv.cpp.i
+.PHONY : src/findhsv.cpp.i
+
+src/findhsv.s: src/findhsv.cpp.s
+.PHONY : src/findhsv.s
+
+# target to generate assembly for a file
+src/findhsv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/findhsv.cpp.s
+.PHONY : src/findhsv.cpp.s
+
+src/learn.o: src/learn.cpp.o
+.PHONY : src/learn.o
+
+# target to build an object file
+src/learn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/learn.cpp.o
+.PHONY : src/learn.cpp.o
+
+src/learn.i: src/learn.cpp.i
+.PHONY : src/learn.i
+
+# target to preprocess a source file
+src/learn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/learn.cpp.i
+.PHONY : src/learn.cpp.i
+
+src/learn.s: src/learn.cpp.s
+.PHONY : src/learn.s
+
+# target to generate assembly for a file
+src/learn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/learn.cpp.s
+.PHONY : src/learn.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -153,6 +225,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/work.o: src/work.cpp.o
+.PHONY : src/work.o
+
+# target to build an object file
+src/work.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/work.cpp.o
+.PHONY : src/work.cpp.o
+
+src/work.i: src/work.cpp.i
+.PHONY : src/work.i
+
+# target to preprocess a source file
+src/work.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/work.cpp.i
+.PHONY : src/work.cpp.i
+
+src/work.s: src/work.cpp.s
+.PHONY : src/work.s
+
+# target to generate assembly for a file
+src/work.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/work.cpp.s
+.PHONY : src/work.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... app"
+	@echo "... src/HSVfind.o"
+	@echo "... src/HSVfind.i"
+	@echo "... src/HSVfind.s"
+	@echo "... src/findhsv.o"
+	@echo "... src/findhsv.i"
+	@echo "... src/findhsv.s"
+	@echo "... src/learn.o"
+	@echo "... src/learn.i"
+	@echo "... src/learn.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/work.o"
+	@echo "... src/work.i"
+	@echo "... src/work.s"
 .PHONY : help
 
 

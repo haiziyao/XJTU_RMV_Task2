@@ -7,4 +7,8 @@ CompileFlags:
     - -DOPENCV_4=1
     - -I/usr/include/c++/11        # 标准库路径（避免 std 命名空间警告）
     - -I/usr/include/x86_64-linux-gnu/c++/11  # 系统架构相关标准库路径
+    - -I/usr/include/tesseract
+    # Leptonica 头文件路径（Tesseract 依赖，默认路径）
+    - -I/usr/include/leptonica
+
 
