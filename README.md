@@ -93,7 +93,43 @@ Scalar lower(hmin,smin,vmin);
 Scalar upper(hmax,smax,vmax);
 inRange(imgHSV, lower, upper, imgMask);
 ```
-#### 定位数字矩形并识别
+#### 图片预处理
+``` cpp
+int hmin = 62,smin=0,vmin=255;
+int hmax =105,smax=59,vmax=255;
+Scalar lower(hmin,smin,vmin);
+Scalar upper(hmax,smax,vmax);
+
+String img_url = "resources/test_image.png";
+Mat img = imread(img_url);
+Mat img_origi = imread(img_url);
+if(img.empty()){
+    cout<<"img not fount,你把帅气的l管藏哪里了"<<endl;
+    return -1;
+}
+Mat img_gray,img_hsv,img_mask,img_morph;
+cvtColor(img, img_gray, COLOR_BGR2GRAY);
+imwrite("imgwork/gray.png", img_gray);
+Mat img_blur,img_gaussblur;
+blur(img, img_blur, Size(3,3));
+GaussianBlur(img, img_gaussblur, Size(13,13), 7);
+imwrite("imgwork/blur.png", img_blur);
+imwrite("imgwork/gaussblur.png", img_gaussblur);
+cvtColor(img_gaussblur, img_hsv, COLOR_BGR2HSV);
+inRange(img_hsv, lower, upper, img_mask);
+imwrite("imgwork/mask.png", img_mask);
+Mat kernel = getStructuringElement(MORPH_RECT, Size(7,7));
+morphologyEx(img_mask, img_morph, MORPH_CLOSE, kernel);
+imwrite("imgwork/morph.png", img_morph);
+
+
+vector<vector<Point>> contours;
+vector<Vec4i> hierarchy;
+vector<Rect> rects;
+findContours(img_morph,contours,hierarchy,RETR_EXTERNAL,CHAIN_APPROX_SIMPLE);
+
+```
+#### 定位数字矩形
 对于数字定位，这里采用根据光条定位。  
 我们找出两个光条之后，直接找到两个光条的中心，把这两个中心的中点作为我们num_rec的中心，而这个矩阵的边长直接等于光条的边长的2倍。  
 为什么这么设置？光条实物看起来好像满足这个关系。
@@ -118,6 +154,7 @@ if (rects.size() == 2) {
     rectangle(img, newRect, Scalar(0, 255, 0), 3);
 }
 ```
+#### 数字识别
 这里使用Tesseract来进行数字识别，不为别的，只是因为，这个是光学库，体积小，使用简单，而且相比于yolo，使用的资源可以说非常小了。  
 如此轻量级，那必须用了。  
 数字被识别出来后会被画在矩形的左上角。  
